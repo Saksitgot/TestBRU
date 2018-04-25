@@ -50,12 +50,31 @@ public class MainFragment extends Fragment{
     private void createToolbar() {
         Toolbar toolbar = getActivity().findViewById(R.id.toolbarRegister);
         ((MainActivity)getActivity()).setSupportActionBar(toolbar);
+
+//        Setup Title
+        ((MainActivity)getActivity()).getSupportActionBar().setTitle("Register");
+        ((MainActivity)getActivity()).getSupportActionBar().setSubtitle("Please Fill All Blank");
+
+//        Setup Navigatin Icon
+        ((MainActivity)getActivity()).getSupportActionBar().setHomeButtonEnabled(true);
+        ((MainActivity)getActivity()).getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
+        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                 @Override
+                         public void onClick(View v) {
+                getActivity().getSupportFragmentManager().popBackStack();
+            }
+        });
+
+
     }
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view view = inflater.inflate(R.layout.fragment_main, container,false);
-        return View;
+        return view;
     }
 } //Main Class
