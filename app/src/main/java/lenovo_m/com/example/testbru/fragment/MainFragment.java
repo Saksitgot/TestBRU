@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,6 +13,7 @@ import android.widget.TextView;
 
 import org.w3c.dom.Text;
 
+import lenovo_m.com.example.testbru.MainActivity;
 import lenovo_m.com.example.testbru.R;
 
 public class MainFragment extends Fragment{
@@ -19,6 +21,13 @@ public class MainFragment extends Fragment{
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
+
+//        create Toolbar
+        createToolbar();
+
+
+//        main Mathod
+
 //      Register Controller
         TextView textView = getView().findViewById(R.id.txtRegister);
         textView.setOnClickListener(new View.OnClickListener() {
@@ -37,6 +46,11 @@ public class MainFragment extends Fragment{
 
 
     } // Main Method
+
+    private void createToolbar() {
+        Toolbar toolbar = getActivity().findViewById(R.id.toolbarRegister);
+        ((MainActivity)getActivity()).setSupportActionBar(toolbar);
+    }
 
     @Nullable
     @Override
